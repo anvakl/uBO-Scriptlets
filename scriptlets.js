@@ -141,8 +141,9 @@ function setAttr(
 	if ( token === '' ) { return; }
 	const tokens = token.split(/\s*\|\s*/);
 	if ( selector === '' ) { selector = `[${tokens.join('],[')}]`; }
-	let timer = undefined;
+	let timer;
 	const setattr = () => {  
+	timer = undefined;
 	const nodes = document.querySelectorAll(selector);
 	try {
 		for (const node of nodes) {
